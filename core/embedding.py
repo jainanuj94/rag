@@ -1,3 +1,3 @@
 from langchain_ollama import OllamaEmbeddings
 
-embeddings = OllamaEmbeddings(model="llama3.1")
+embeddings = OllamaEmbeddings(model="nomic-embed-text")

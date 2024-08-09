@@ -65,7 +65,7 @@ def loadDocuments():
 def loadFromLinks(base_url, embeddings, start_url, text_splitter):
     # Get all links
     all_links = get_all_links(start_url, base_url)
-    loaders = [CustomWebLoader(url) for url in all_links]
+    loaders = [CustomWebLoader(url, show_progress=True) for url in all_links]
     # Load all documents
     all_documents = []
     for loader in loaders:

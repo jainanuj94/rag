@@ -4,11 +4,11 @@ import sys
 
 sys.path.append('.')  # Add the parent directory to the Python path
 
-from core.vector_store import rag_chain
+from core.rag_tools import rag_chain
 
 
-def ask_question(qa, question):
-    result = qa.invoke({"input": question})
+def ask_question(chain, question):
+    result = chain.invoke({"input": question})
 
     # print(f"{result}")
     print(f"Question: {question}")

@@ -6,9 +6,9 @@ from langchain_text_splitters import MarkdownHeaderTextSplitter
 
 
 # Split the documents into chunks
-text_splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=300)
+text_splitter = RecursiveCharacterTextSplitter(chunk_size=7500, chunk_overlap=150)
 md_splitter = RecursiveCharacterTextSplitter.from_language(
-    language=Language.MARKDOWN, chunk_size=1000, chunk_overlap=300
+    language=Language.MARKDOWN, chunk_size=7500, chunk_overlap=150
 )
 
 headers_to_split_on = [

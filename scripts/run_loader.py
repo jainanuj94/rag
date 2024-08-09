@@ -4,6 +4,7 @@ import sys
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from loader.document_loader import loadFromDirectory
+from loader.web_loader import loadDocuments
 from core.vector_store import vectorstore
 
 def main():
@@ -15,8 +16,9 @@ def main():
     loadFromDirectory()
     print(f"Inserted {vectorstore._collection.count()} documents")
     print("Loading from web.")
-    # loadDocuments()
-    # print("Loaded embeddings.")
+    loadDocuments()
+    print(f"Inserted {vectorstore._collection.count()} documents")
+    print("Loaded embeddings.")
 
     print("Data loading process completed.")
 

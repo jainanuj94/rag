@@ -1,12 +1,10 @@
 import logging
 
 from langchain_community.document_loaders import DirectoryLoader
-
-from core.text_splitter import text_splitter, markdown_splitter
-from core.vector_store import vectorstore
 from langchain_community.document_loaders import UnstructuredMarkdownLoader
-from langchain_core.documents import Document
 
+from core.text_splitter import text_splitter
+from core.vector_store import vectorstore
 
 logger = logging.getLogger(__name__)
 
@@ -18,7 +16,6 @@ def loadFromDirectory():
                              loader_cls=UnstructuredMarkdownLoader,
                              loader_kwargs=text_loader_kwargs,
                              show_progress=True)
-    # loader = UnstructuredMarkdownLoader('/Users/jainanuj94/kli-repos/optimus-docs/docs')
     documents = loader.load()
 
     splits = text_splitter.split_documents(documents)
@@ -41,6 +38,7 @@ def sanitize_metadata(metadata):
         else:
             sanitized[key] = str(value)
     return sanitized
+
 
 def format_docs(docs):
     return "\n\n".join(doc.page_content for doc in docs)

@@ -8,6 +8,7 @@ __pycache__/
 
 # Distribution / packaging
 .Python
+db/
 .idea/
 .venv/
 chroma_db/
